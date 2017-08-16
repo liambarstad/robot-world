@@ -12,7 +12,7 @@ class Robot
     @city = robot_params[:city]
     @state = robot_params[:state]
     @department = robot_params[:department]
-    @database = SQLite3::Database.new('db/robot_world_development.db')
+    @database = SQLite3::Database.new('db/robot_cache.db')
     @database.results_as_hash = true
   end
 
@@ -34,6 +34,6 @@ class Robot
   end
 
   def self.delete(id)
-    @database.execute("DELETE * FROM robots WHERE id=?;" id)
+    @database.execute("DELETE * FROM robots WHERE id=?;", id)
   end
 end

@@ -1,7 +1,7 @@
 require 'sqlite3'
 
-database = Sqlite3::Database.new("db/robot_cache.db")
-database.execute("CREATE TABLE robots(id INTERGER PRIMARY KEY AUTOINCREMENT,
+database = SQLite3::Database.new("db/robot_cache.db")
+database.execute("CREATE TABLE robots(id INTEGER PRIMARY KEY AUTOINCREMENT,
                                       name VARCHAR(20),
                                       city VARCHAR(20),
                                       state VARCHAR(20),
